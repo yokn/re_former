@@ -1,8 +1,6 @@
-<%= form_tag('/users', method: :post) %>
-<%= label_tag 'email', 'Email:' %>
-<%= text_field_tag 'username' %>
-<%= label_tag 'username', 'Username:' %>
-<%= text_field_tag 'email' %>
-<%= label_tag 'password', 'Password:' %>
-<%= password_field_tag 'password' %>
-<%= submit_tag "Submit"%>
+<%= form_for @user do |f| %>
+  Email: <%= f.text_field :email, placeholder: "example@example.com" %><br />
+  Username : <%= f.text_field :username, placeholder: "Select a username"%><br />
+  Password : <%= f.password_field :password, placeholder: "Enter a password" %><br />
+  <%= f.submit %>
+<% end %>
